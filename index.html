@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Oscars Goes To...</title>
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <!-- <link rel="stylesheet" href="/css/styles.css"> -->
+</head>
+
+<body>
+    <!-- MENU -->
+    <!-- <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#filmes">Filmes</a></li>
+            <li><a href="#categorias">Categorias</a></li>
+            <li><a href="#resultado">Resultado</a></li>
+        </ul>
+    </nav> -->
+
+    <!-- HOME -->
+    <!-- <section id="home">
+        <h1>Bolão do Oscar 2025</h1>
+        <p style="text-align: center;">Escolha seus favoritos e participe do bolão com seus amigos!</p>
+    </section> -->
+
+    <!-- FILMES -->
+    <!-- <section id="filmes">
+        <h2>Filmes Indicados</h2>
+        <ul>
+            <li><strong>Oppenheimer</strong> – Drama histórico dirigido por Christopher Nolan</li>
+            <li><strong>Barbie</strong> – Comédia com crítica social, dirigida por Greta Gerwig</li>
+            <li><strong>Pobres Criaturas</strong> – Filme surreal dirigido por Yorgos Lanthimos</li>
+        </ul>
+    </section> -->
+
+    <!-- CATEGORIAS -->
+    <h1>Bolão do Oscar 2025</h1>
+
+    <form id="bolaoForm">
+        <div class="categoria">
+            <h2 class="categoria_nome">Melhor Filme</h2>
+            <p class="categoria_nome_ingles">Best Picture</p>
+            <p class="categoria_pontuacao">(10 pontos)</p>
+            <label><input type="radio" name="melhor_filme" class="A Substância" value="A Substância" required> A
+                Substância</label>
+            <label><input type="radio" name="melhor_filme" class="Ainda Estou Aqui" value="Ainda Estou Aqui"> Ainda
+                Estou Aqui</label>
+            <label><input type="radio" name="melhor_filme" class="Anora" value="Anora"> Anora</label>
+            <label><input type="radio" name="melhor_filme" class="Conclave" value="Conclave"> Conclave</label>
+            <label><input type="radio" name="melhor_filme" class="Duna" value="Duna"> Duna: Parte II</label>
+            <label><input type="radio" name="melhor_filme" class="Emilia Pérez" value="Emilia Pérez"> Emilia
+                Pérez</label>
+            <label><input type="radio" name="melhor_filme" class="Nickel Boys" value="Nickel Boys"> Nickel Boys</label>
+            <label><input type="radio" name="melhor_filme" class="O Brutalista" value="O Brutalista"> O
+                Brutalista</label>
+            <label><input type="radio" name="melhor_filme" class="Um Completo Desconhecido"
+                    value="Um Completo Desconhecido"> Um Completo Desconhecido</label>
+            <label><input type="radio" name="melhor_filme" class="Wicked" value="Wicked"> Wicked</label>
+        </div>
+
+        <div class="categoria">
+            <h2 class="categoria_nome">Direção</h2>
+            <p class="categoria_nome_ingles">Directing</p>
+            <p class="categoria_pontuacao">(10 pontos)</p>
+            <label><input type="radio" name="direcao" class="Anora" value="Sean Baker" required> Sean Baker
+                <i>(Anora)</i></label>
+            <label><input type="radio" name="direcao" class="O Brutalista" value="Brady Corbet"> Brady Corbet <i>(O
+                    Brutalista)</i></label>
+            <label><input type="radio" name="direcao" class="Um Completo Desconhecido" value="James Mangold"> James
+                Mangold <i>(Um Completo Desconhecido)</i></label>
+            <label><input type="radio" name="direcao" class="Emilia Pérez" value="Jacques Audiard"> Jacques Audiard
+                <i>(Emilia Pérez)</i></label>
+            <label><input type="radio" name="direcao" class="A Substância" value="Coralie Fargeat"> Coralie Fargeat
+                <i>(A Substância)</i></label>
+        </div>
+
+        <div class="categoria">
+            <h2 class="categoria_nome">Atriz em Papel Principal</h2>
+            <p class="categoria_nome_ingles">Actress in a Leading Role</p>
+            <p class="categoria_pontuacao">(10 pontos)</p>
+            <label><input type="radio" name="atriz" class="" value="" required> </label>
+            <label><input type="radio" name="atriz" class="" value=""> </label>
+            <label><input type="radio" name="atriz" class="" value=""> </label>
+            <label><input type="radio" name="atriz" class="" value=""> </label>
+            <label><input type="radio" name="atriz" class="" value=""> </label>
+        </div>
+
+        <div class="categoria">
+            <h2 class="categoria_nome">Ator em Papel Principal</h2>
+            <p class="categoria_nome_ingles">Actor in a Leading Role</p>
+            <p class="categoria_pontuacao">(10 pontos)</p>
+            <label><input type="radio" name="ator" class="" value="" required> </label>
+            <label><input type="radio" name="ator" class="" value=""> </label>
+            <label><input type="radio" name="ator" class="" value=""> </label>
+            <label><input type="radio" name="ator" class="" value=""> </label>
+            <label><input type="radio" name="ator" class="" value=""> </label>
+        </div>
+
+        <div class="categoria">
+            <h2 class="categoria_nome">Atriz Coadjuvante</h2>
+            <p class="categoria_nome_ingles">Actress in a Supporting Role</p>
+            <p class="categoria_pontuacao">(10 pontos)</p>
+            <label><input type="radio" name="atriz_coadjuvante" class="" value="" required> </label>
+            <label><input type="radio" name="atriz_coadjuvante" class="" value=""> </label>
+            <label><input type="radio" name="atriz_coadjuvante" class="" value=""> </label>
+            <label><input type="radio" name="atriz_coadjuvante" class="" value=""> </label>
+            <label><input type="radio" name="atriz_coadjuvante" class="" value=""> </label>
+        </div>
+
+        <div class="categoria">
+            <h2 class="categoria_nome">Ator Coadjuvante</h2>
+            <p class="categoria_nome_ingles">Actor in a Supporting Role</p>
+            <p class="categoria_pontuacao">(10 pontos)</p>
+            <label><input type="radio" name="ator_coadjuvante" class="" value="" required> </label>
+            <label><input type="radio" name="ator_coadjuvante" class="" value=""> </label>
+            <label><input type="radio" name="ator_coadjuvante" class="" value=""> </label>
+            <label><input type="radio" name="ator_coadjuvante" class="" value=""> </label>
+            <label><input type="radio" name="ator_coadjuvante" class="" value=""> </label>
+        </div>
+
+        <div class="categoria">
+            <h2 class="categoria_nome">Roteiro Original</h2>
+            <p class="categoria_nome_ingles">Writing (Original Screenplay)</p>
+            <p class="categoria_pontuacao">(10 pontos)</p>
+            <label><input type="radio" name="roteiro_original" class="" value="" required> </label>
+            <label><input type="radio" name="roteiro_original" class="" value=""> </label>
+            <label><input type="radio" name="roteiro_original" class="" value=""> </label>
+            <label><input type="radio" name="roteiro_original" class="" value=""> </label>
+            <label><input type="radio" name="roteiro_original" class="" value=""> </label>
+        </div>
+
+        <div class="categoria">
+            <h2 class="categoria_nome">Roteiro Adaptado</h2>
+            <p class="categoria_nome_ingles">Writing (Adapted Screenplay)</p>
+            <p class="categoria_pontuacao">(10 pontos)</p>
+            <label><input type="radio" name="roteiro_adaptado" class="" value="" required> </label>
+            <label><input type="radio" name="roteiro_adaptado" class="" value=""> </label>
+            <label><input type="radio" name="roteiro_adaptado" class="" value=""> </label>
+            <label><input type="radio" name="roteiro_adaptado" class="" value=""> </label>
+            <label><input type="radio" name="roteiro_adaptado" class="" value=""> </label>
+        </div>
+
+        <div class="categoria">
+            <h2 class="categoria_nome">Longa-metragem de Animação</h2>
+            <p class="categoria_nome_ingles">Animated Feature Film</p>
+            <p class="categoria_pontuacao">(10 pontos)</p>
+            <label><input type="radio" name="animacao" class="" value="" required> </label>
+            <label><input type="radio" name="animacao" class="" value=""> </label>
+            <label><input type="radio" name="animacao" class="" value=""> </label>
+            <label><input type="radio" name="animacao" class="" value=""> </label>
+            <label><input type="radio" name="animacao" class="" value=""> </label>
+        </div>
+
+        <div class="categoria">
+            <h2 class="categoria_nome">Trilha Sonora Original</h2>
+            <p class="categoria_nome_ingles">Music (Original Score)</p>
+            <p class="categoria_pontuacao">(10 pontos)</p>
+            <label><input type="radio" name="trilha_sonora" class="" value="" required> </label>
+            <label><input type="radio" name="trilha_sonora" class="" value=""> </label>
+            <label><input type="radio" name="trilha_sonora" class="" value=""> </label>
+            <label><input type="radio" name="trilha_sonora" class="" value=""> </label>
+            <label><input type="radio" name="trilha_sonora" class="" value=""> </label>
+        </div>
+
+        <div class="categoria">
+            <h2 class="categoria_nome">Canção Original</h2>
+            <p class="categoria_nome_ingles">Music (Original Song)</p>
+            <p class="categoria_pontuacao">(10 pontos)</p>
+            <label><input type="radio" name="cancao" class="" value="" required> </label>
+            <label><input type="radio" name="cancao" class="" value=""> </label>
+            <label><input type="radio" name="cancao" class="" value=""> </label>
+            <label><input type="radio" name="cancao" class="" value=""> </label>
+            <label><input type="radio" name="cancao" class="" value=""> </label>
+        </div>
+
+        <div class="categoria">
+            <h2 class="categoria_nome">Longa-metragem Internacional</h2>
+            <p class="categoria_nome_ingles">International Feature Film</p>
+            <p class="categoria_pontuacao">(5 pontos)</p>
+            <label><input type="radio" name="internacional" class="" value="" required> </label>
+            <label><input type="radio" name="internacional" class="" value=""> </label>
+            <label><input type="radio" name="internacional" class="" value=""> </label>
+            <label><input type="radio" name="internacional" class="" value=""> </label>
+            <label><input type="radio" name="internacional" class="" value=""> </label>
+        </div>
+
+        <div class="categoria">
+            <h2 class="categoria_nome">Fotografia</h2>
+            <p class="categoria_nome_ingles">Cinematography</p>
+            <p class="categoria_pontuacao">(5 pontos)</p>
+            <label><input type="radio" name="fotografia" class="" value="" required> </label>
+            <label><input type="radio" name="fotografia" class="" value=""> </label>
+            <label><input type="radio" name="fotografia" class="" value=""> </label>
+            <label><input type="radio" name="fotografia" class="" value=""> </label>
+            <label><input type="radio" name="fotografia" class="" value=""> </label>
+        </div>
+
+        <div class="categoria">
+            <h2 class="categoria_nome">Figurino</h2>
+            <p class="categoria_nome_ingles">Costume Design</p>
+            <p class="categoria_pontuacao">(5 pontos)</p>
+            <label><input type="radio" name="figurino" class="" value="" required> </label>
+            <label><input type="radio" name="figurino" class="" value=""> </label>
+            <label><input type="radio" name="figurino" class="" value=""> </label>
+            <label><input type="radio" name="figurino" class="" value=""> </label>
+            <label><input type="radio" name="figurino" class="" value=""> </label>
+        </div>
+
+        <div class="categoria">
+            <h2 class="categoria_nome">Edição</h2>
+            <p class="categoria_nome_ingles">Film Editing</p>
+            <p class="categoria_pontuacao">(5 pontos)</p>
+            <label><input type="radio" name="edicao" class="" value="" required> </label>
+            <label><input type="radio" name="edicao" class="" value=""> </label>
+            <label><input type="radio" name="edicao" class="" value=""> </label>
+            <label><input type="radio" name="edicao" class="" value=""> </label>
+            <label><input type="radio" name="edicao" class="" value=""> </label>
+        </div>
+
+        <div class="categoria">
+            <h2 class="categoria_nome">Maquiagem e Penteado</h2>
+            <p class="categoria_nome_ingles">Makeup and Hairstyling</p>
+            <p class="categoria_pontuacao">(5 pontos)</p>
+            <label><input type="radio" name="maquiagem_e_penteado" class="" value="" required> </label>
+            <label><input type="radio" name="maquiagem_e_penteado" class="" value=""> </label>
+            <label><input type="radio" name="maquiagem_e_penteado" class="" value=""> </label>
+            <label><input type="radio" name="maquiagem_e_penteado" class="" value=""> </label>
+            <label><input type="radio" name="maquiagem_e_penteado" class="" value=""> </label>
+        </div>
+
+        <div class="categoria">
+            <h2 class="categoria_nome">Design de Produção</h2>
+            <p class="categoria_nome_ingles">Production Design</p>
+            <p class="categoria_pontuacao">(5 pontos)</p>
+            <label><input type="radio" name="design_producao" class="" value="" required> </label>
+            <label><input type="radio" name="design_producao" class="" value=""> </label>
+            <label><input type="radio" name="design_producao" class="" value=""> </label>
+            <label><input type="radio" name="design_producao" class="" value=""> </label>
+            <label><input type="radio" name="design_producao" class="" value=""> </label>
+        </div>
+
+        <div class="categoria">
+            <h2 class="categoria_nome">Efeitos Visuais</h2>
+            <p class="categoria_nome_ingles">Visual Effects</p>
+            <p class="categoria_pontuacao">(5 pontos)</p>
+            <label><input type="radio" name="efeitos_visuais" class="" value="" required> </label>
+            <label><input type="radio" name="efeitos_visuais" class="" value=""> </label>
+            <label><input type="radio" name="efeitos_visuais" class="" value=""> </label>
+            <label><input type="radio" name="efeitos_visuais" class="" value=""> </label>
+            <label><input type="radio" name="efeitos_visuais" class="" value=""> </label>
+        </div>
+
+        <div class="categoria">
+            <h2 class="categoria_nome">Som</h2>
+            <p class="categoria_nome_ingles">Sound</p>
+            <p class="categoria_pontuacao">(5 pontos)</p>
+            <label><input type="radio" name="som" class="" value="" required> </label>
+            <label><input type="radio" name="som" class="" value=""> </label>
+            <label><input type="radio" name="som" class="" value=""> </label>
+            <label><input type="radio" name="som" class="" value=""> </label>
+            <label><input type="radio" name="som" class="" value=""> </label>
+        </div>
+
+        <div class="categoria">
+            <h2 class="categoria_nome">Curta-metragem de Animação</h2>
+            <p class="categoria_nome_ingles">Animated Short Film</p>
+            <p class="categoria_pontuacao">(2 pontos)</p>
+            <label><input type="radio" name="curta_animacao" class="" value="" required> </label>
+            <label><input type="radio" name="curta_animacao" class="" value=""> </label>
+            <label><input type="radio" name="curta_animacao" class="" value=""> </label>
+            <label><input type="radio" name="curta_animacao" class="" value=""> </label>
+            <label><input type="radio" name="curta_animacao" class="" value=""> </label>
+        </div>
+
+        <div class="categoria">
+            <h2 class="categoria_nome">Documentário de Longa-metragem</h2>
+            <p class="categoria_nome_ingles">Documentary Feature Film</p>
+            <p class="categoria_pontuacao">(2 pontos)</p>
+            <label><input type="radio" name="doc_longa" class="" value="" required> </label>
+            <label><input type="radio" name="doc_longa" class="" value=""> </label>
+            <label><input type="radio" name="doc_longa" class="" value=""> </label>
+            <label><input type="radio" name="doc_longa" class="" value=""> </label>
+            <label><input type="radio" name="doc_longa" class="" value=""> </label>
+        </div>
+
+        <div class="categoria">
+            <h2 class="categoria_nome">Documentário de Curta-metragem</h2>
+            <p class="categoria_nome_ingles">Documentary Short Film</p>
+            <p class="categoria_pontuacao">(2 pontos)</p>
+            <label><input type="radio" name="doc_curta" class="" value="" required> </label>
+            <label><input type="radio" name="doc_curta" class="" value=""> </label>
+            <label><input type="radio" name="doc_curta" class="" value=""> </label>
+            <label><input type="radio" name="doc_curta" class="" value=""> </label>
+            <label><input type="radio" name="doc_curta" class="" value=""> </label>
+        </div>
+
+        <div class="categoria">
+            <h2 class="categoria_nome">Curta-metragem em Live Action</h2>
+            <p class="categoria_nome_ingles">Live Action Short Film</p>
+            <p class="categoria_pontuacao">(2 pontos)</p>
+            <label><input type="radio" name="curta_metragem" class="" value="" required> </label>
+            <label><input type="radio" name="curta_metragem" class="" value=""> </label>
+            <label><input type="radio" name="curta_metragem" class="" value=""> </label>
+            <label><input type="radio" name="curta_metragem" class="" value=""> </label>
+            <label><input type="radio" name="curta_metragem" class="" value=""> </label>
+        </div>
+
+        <button type="submit">Salvar</button>
+        <button type="submit">Editar</button>
+    </form>
+
+    <div id="resultado"></div>
+
+    <!-- RESULTADO -->
+    <!-- <section id="resultado">
+        <h2>Seus Palpites</h2>
+        <div id="palpites"></div>
+    </section> -->
+</body>
+
+</html>
