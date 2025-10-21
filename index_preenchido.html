@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Oscars Goes To...</title>
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <!-- MENU -->
+    <!-- <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#filmes">Filmes</a></li>
+            <li><a href="#categorias">Categorias</a></li>
+            <li><a href="#resultado">Resultado</a></li>
+        </ul>
+    </nav> -->
+
+    <!-- HOME -->
+    <!-- <section id="home">
+        <h1>Bolão do Oscar 2025</h1>
+        <p style="text-align: center;">Escolha seus favoritos e participe do bolão com seus amigos!</p>
+    </section> -->
+
+    <!-- FILMES -->
+    <!-- <section id="filmes">
+        <h2>Filmes Indicados</h2>
+        <ul>
+            <li><strong>Oppenheimer</strong> – Drama histórico dirigido por Christopher Nolan</li>
+            <li><strong>Barbie</strong> – Comédia com crítica social, dirigida por Greta Gerwig</li>
+            <li><strong>Pobres Criaturas</strong> – Filme surreal dirigido por Yorgos Lanthimos</li>
+        </ul>
+    </section> -->
+
+    <!-- CATEGORIAS -->
+    <h1>Bolão do Oscar 2025</h1>
+
+    <form id="bolaoForm">
+        <div class="categoria">
+            <h2 class="categoria_nome">Melhor Filme</h2>
+            <p class="categoria_nome_ingles">Best Picture</p>
+            <p class="categoria_pontuacao">(10 pontos)</p>
+            <label><input type="radio" name="melhor_filme" class="A_Substancia" value="A Substância" required> A
+                Substância</label>
+            <label><input type="radio" name="melhor_filme" class="Ainda_Estou_Aqui" value="Ainda Estou Aqui"> Ainda
+                Estou Aqui</label>
+            <label><input type="radio" name="melhor_filme" class="Anora" value="Anora"> Anora</label>
+            <label><input type="radio" name="melhor_filme" class="Conclave" value="Conclave"> Conclave</label>
+            <label><input type="radio" name="melhor_filme" class="Duna" value="Duna"> Duna: Parte II</label>
+            <label><input type="radio" name="melhor_filme" class="Emilia_Perez" value="Emilia Pérez"> Emilia
+                Pérez</label>
+            <label><input type="radio" name="melhor_filme" class="Nickel_Boys" value="Nickel Boys"> Nickel Boys</label>
+            <label><input type="radio" name="melhor_filme" class="O_Brutalista" value="O Brutalista"> O
+                Brutalista</label>
+            <label><input type="radio" name="melhor_filme" class="Um_Completo_Desconhecido"
+                    value="Um Completo Desconhecido"> Um Completo Desconhecido</label>
+            <label><input type="radio" name="melhor_filme" class="Wicked" value="Wicked"> Wicked</label>
+        </div>
+
+        <div class="categoria">
+            <h2 class="categoria_nome">Direção</h2>
+            <p class="categoria_nome_ingles">Directing</p>
+            <p class="categoria_pontuacao">(10 pontos)</p>
+            <label><input type="radio" name="direcao" class="Anora" value="Sean Baker" required> Sean Baker
+                <i>(Anora)</i></label>
+            <label><input type="radio" name="direcao" class="O_Brutalista" value="Brady Corbet"> Brady Corbet <i>(O
+                    Brutalista)</i></label>
+            <label><input type="radio" name="direcao" class="Um_Completo_Desconhecido" value="James Mangold"> James
+                Mangold <i>(Um Completo Desconhecido)</i></label>
+            <label><input type="radio" name="direcao" class="Emilia_Perez" value="Jacques Audiard"> Jacques Audiard
+                <i>(Emilia Pérez)</i></label>
+            <label><input type="radio" name="direcao" class="A_Substancia" value="Coralie Fargeat"> Coralie Fargeat
+                <i>(A Substância)</i></label>
+        </div>
+
+        <div class="categoria">
+            <h2 class="categoria_nome">Atriz em Papel Principal</h2>
+            <p class="categoria_nome_ingles">Actress in a Leading Role</p>
+            <p class="categoria_pontuacao">(10 pontos)</p>
+            <label><input type="radio" name="atriz" class="Ainda_Estou_Aqui" value="Fernanda Torres" required> Fernanda Torres <i>(Ainda Estou Aqui)</i></label>
+            <label><input type="radio" name="atriz" class="Wicked" value="Cynthia Erivo"> Cynthia Erivo <i>(Wicked)</i></label>
+            <label><input type="radio" name="atriz" class="Emilia_Perez" value="Karla Sofia Gascón"> Karla Sofia Gascón <i>(Emilia Pérez)</i></label>
+            <label><input type="radio" name="atriz" class="Anora" value="Mikey Madison"> Mikey Madison <i>(Anora)</i></label>
+            <label><input type="radio" name="atriz" class="A_Substancia" value="Demi Moore"> Demi Moore <i>(A Substância)</i></label>
+        </div>
+
+        <div class="categoria">
+            <h2 class="categoria_nome">Ator em Papel Principal</h2>
+            <p class="categoria_nome_ingles">Actor in a Leading Role</p>
+            <p class="categoria_pontuacao">(10 pontos)</p>
+            <label><input type="radio" name="ator" class="O_Brutalista" value="Adrien Brody" required> Adrien Brody<i>(O Brutalista)</i></label>
+            <label><input type="radio" name="ator" class="Um_Completo_Desconhecido" value="Timothée Chalamet"> Timothée Chalamet<i>(Um Completo Desconhecido)</i></label>
+            <label><input type="radio" name="ator" class="Sing_Sing" value="Colman Domingo"> Colman Domingo<i>(Sing Sing)</i></label>
+            <label><input type="radio" name="ator" class="Conclave" value="Ralph Fiennes"> Ralph Fiennes<i>(Conclave)</i></label>
+            <label><input type="radio" name="ator" class="O_Aprendiz" value="Sebastian Stan"> Sebastian Stan<i>(O Aprendiz)</i></label>
+        </div>
+
+        <div class="categoria">
+            <h2 class="categoria_nome">Atriz Coadjuvante</h2>
+            <p class="categoria_nome_ingles">Actress in a Supporting Role</p>
+            <p class="categoria_pontuacao">(10 pontos)</p>
+            <label><input type="radio" name="atriz_coadjuvante" class="Um_Completo_Desconhecido" value="Monica Barbaro" required> Monica Barbaro<i>(Um Completo Desconhecido)</i></label>
+            <label><input type="radio" name="atriz_coadjuvante" class="Wicked" value="Ariana Grande"> Ariana Grande<i>(Wicked)</i></label>
+            <label><input type="radio" name="atriz_coadjuvante" class="O_Brutalista" value="Felicity Jones"> Felicity Jones<i>(O Brutalista)</i></label>
+            <label><input type="radio" name="atriz_coadjuvante" class="Conclave" value="Isabella Rossellini"> Isabella Rossellini<i>(Conclave)</i></label>
+            <label><input type="radio" name="atriz_coadjuvante" class="Emilia_Perez" value="Zoe Saldaña"> Zoe Saldaña<i>(Emilia Pérez)</i></label>
+        </div>
+
+        <div class="categoria">
+            <h2 class="categoria_nome">Ator Coadjuvante</h2>
+            <p class="categoria_nome_ingles">Actor in a Supporting Role</p>
+            <p class="categoria_pontuacao">(10 pontos)</p>
+            <label><input type="radio" name="ator_coadjuvante" class="Anora" value="Yura Borisov" required> Yura Borisov<i>(Anora)</i></label>
+            <label><input type="radio" name="ator_coadjuvante" class="A_Verdadeira_Dor" value="Kieran Culkin"> Kieran Culkin<i>(A Verdadeira Dor)</i></label>
+            <label><input type="radio" name="ator_coadjuvante" class="Um_Completo_Desconhecido" value="Edward Noton"> Edward Noton<i>(Um Completo Desconhecido)</i></label>
+            <label><input type="radio" name="ator_coadjuvante" class="O_Brutalista" value="Guy Pearce"> Guy Pearce<i>(O Brutalista)</i></label>
+            <label><input type="radio" name="ator_coadjuvante" class="O_Aprendiz" value="Jeremy Strong"> Jeremy Strong<i>(O Aprendiz)</i></label>
+        </div>
+
+        <div class="categoria">
+            <h2 class="categoria_nome">Roteiro Original</h2>
+            <p class="categoria_nome_ingles">Writing (Original Screenplay)</p>
+            <p class="categoria_pontuacao">(10 pontos)</p>
+            <label><input type="radio" name="roteiro_original" class="Anora" value="Anora" required> Anora</label>
+            <label><input type="radio" name="roteiro_original" class="O_Brutalista" value="O Brutalista"> O Brutalista</label>
+            <label><input type="radio" name="roteiro_original" class="A_Verdadeira_Dor" value="A Verdadeira Dor"> A Verdadeira Dor</label>
+            <label><input type="radio" name="roteiro_original" class="A_Substancia" value="A Substância"> A Substância</label>
+            <label><input type="radio" name="roteiro_original" class="September_5" value="September 5"> September 5</label>
+        </div>
+
+        <div class="categoria">
+            <h2 class="categoria_nome">Roteiro Adaptado</h2>
+            <p class="categoria_nome_ingles">Writing (Adapted Screenplay)</p>
+            <p class="categoria_pontuacao">(10 pontos)</p>
+            <label><input type="radio" name="roteiro_adaptado" class="Um_Completo_Desconhecido" value="Um Completo Desconhecido" required> Um Completo Desconhecido</label>
+            <label><input type="radio" name="roteiro_adaptado" class="Conclave" value="Conclave"> Conclave</label>
+            <label><input type="radio" name="roteiro_adaptado" class="Emilia_Perez" value="Emilia Pérez"> Emilia Pérez</label>
+            <label><input type="radio" name="roteiro_adaptado" class="Sing_Sing" value="Sing Sing"> Sing Sing</label>
+            <label><input type="radio" name="roteiro_adaptado" class="Nickel_Boys" value="Nickel Boys"> Nickel Boys</label>
+        </div>
+
+        <div class="categoria">
+            <h2 class="categoria_nome">Longa-metragem de Animação</h2>
+            <p class="categoria_nome_ingles">Animated Feature Film</p>
+            <p class="categoria_pontuacao">(10 pontos)</p>
+            <label><input type="radio" name="animacao" class="Flow" value="Flow" required> Flow</label>
+            <label><input type="radio" name="animacao" class="DivertidaMente" value="Divertida Mente 2"> Divertida Mente 2</label>
+            <label><input type="radio" name="animacao" class="Memórias_de_Um_Caracol" value="Memórias de Um Caracol"> Memórias de Um Caracol</label>
+            <label><input type="radio" name="animacao" class="Wallace_Gromit" value="Wallace & Gromit"> Wallace & Gromit: Vingança das Aves</label>
+            <label><input type="radio" name="animacao" class="Robo_Selvagem" value="Robô Selvagem"> Robô Selvagem</label>
+        </div>
+
+        <div class="categoria">
+            <h2 class="categoria_nome">Trilha Sonora Original</h2>
+            <p class="categoria_nome_ingles">Music (Original Score)</p>
+            <p class="categoria_pontuacao">(10 pontos)</p>
+            <label><input type="radio" name="trilha_sonora" class="O_Brutalista" value="O Brutalista" required> O Brutalista</label>
+            <label><input type="radio" name="trilha_sonora" class="Conclave" value="Conclave"> Conclave</label>
+            <label><input type="radio" name="trilha_sonora" class="Emilia_Perez" value="Emilia Pérez"> Emilia Pérez</label>
+            <label><input type="radio" name="trilha_sonora" class="Wicked" value="Wicked"> Wicked</label>
+            <label><input type="radio" name="trilha_sonora" class="Robo_Selvagem" value="Robô Selvagem"> Robô Selvagem</label>
+        </div>
+
+        <div class="categoria">
+            <h2 class="categoria_nome">Canção Original</h2>
+            <p class="categoria_nome_ingles">Music (Original Song)</p>
+            <p class="categoria_pontuacao">(10 pontos)</p>
+            <label><input type="radio" name="cancao" class="Emilia_Perez" value="El Mal" required> El Mal <i>(Emilia Pérez)</i> 
+                <a class="youtube_link" target="_blank" href="https://www.youtube.com/watch?v=IkLRuy3qFHY&list=RDIkLRuy3qFHY&start_radio=1&ab_channel=SonySoundtracksVEVO"><img class="youtube_simbolo" src="img/youtube_simbolo.png" alt="Símbolo do YouTube"></a></label>
+            <label><input type="radio" name="cancao" class="As_Mulheres_do_Batalhão" value="The Journey"> The Journey <i>(As Mulheres do Batalhão 6888)</i>
+                <a class="youtube_link" target="_blank" href="https://www.youtube.com/watch?v=Tc3TYuMAjZY&list=RDTc3TYuMAjZY&start_radio=1&ab_channel=StillWatchingNetflix"><img class="youtube_simbolo" src="img/youtube_simbolo.png" alt="Símbolo do YouTube"></a></label>
+            <label><input type="radio" name="cancao" class="Sing_Sing" value="Like a Bird"> Like a Bird <i>(Sing Sing)</i>
+                <a class="youtube_link" target="_blank" href=""><img class="youtube_simbolo" src="img/youtube_simbolo.png" alt="Símbolo do YouTube"></a></label>
+            <label><input type="radio" name="cancao" class="Emilia_Perez" value="Mi Camino"> Mi Camino <i>(Emilia Pérez)</i>
+                <a class="youtube_link" target="_blank" href="https://www.youtube.com/watch?v=REM5u28nToc&list=RDREM5u28nToc&start_radio=1&ab_channel=SelenaGomez"><img class="youtube_simbolo" src="img/youtube_simbolo.png" alt="Símbolo do YouTube"></a></label>
+            <label><input type="radio" name="cancao" class="Elton_John" value="Never Too Late"> Never Too Late  <i>(Elton John: Never Too Late)</i>
+                <a class="youtube_link" target="_blank" href="https://www.youtube.com/watch?v=UwL4UC_tLTI&list=RDUwL4UC_tLTI&start_radio=1&ab_channel=EltonJohnVEVO"><img class="youtube_simbolo" src="img/youtube_simbolo.png" alt="Símbolo do YouTube"></a></label>
+        </div>
+
+        <div class="categoria">
+            <h2 class="categoria_nome">Longa-metragem Internacional</h2>
+            <p class="categoria_nome_ingles">International Feature Film</p>
+            <p class="categoria_pontuacao">(5 pontos)</p>
+            <label><input type="radio" name="internacional" class="Ainda Estou Aqui" value="Ainda Estou Aqui" required> Ainda Estou Aqui <i>(Brasil)</i></label>
+            <label><input type="radio" name="internacional" class="Emilia Pérez" value="Emilia Pérez"> Emilia Pérez <i>(França)</i></label>
+            <label><input type="radio" name="internacional" class="A Semente do Fruto Sagrado" value="A Semente do Fruto Sagrado"> A Semente do Fruto Sagrado <i>(Alemanha)</i></label>
+            <label><input type="radio" name="internacional" class="Flow" value="Flow"> Flow <i>(Letônia)</i></label>
+        </div>
+
+        <div class="categoria">
+            <h2 class="categoria_nome">Fotografia</h2>
+            <p class="categoria_nome_ingles">Cinematography</p>
+            <p class="categoria_pontuacao">(5 pontos)</p>
+            <label><input type="radio" name="fotografia" class="O_Brutalista" value="O Brutalista" required> O Brutalista</label>
+            <label><input type="radio" name="fotografia" class="Duna" value="Duna: Parte II"> Duna: Parte II</label>
+            <label><input type="radio" name="fotografia" class="Emilia_Perez" value="Emilia Pérez"> Emilia Pérez</label>
+            <label><input type="radio" name="fotografia" class="Maria_Callas" value="Maria Callas"> Maria Callas</label>
+            <label><input type="radio" name="fotografia" class="Nosferatu" value="Nosferatu"> Nosferatu</label>
+        </div>
+
+        <div class="categoria">
+            <h2 class="categoria_nome">Figurino</h2>
+            <p class="categoria_nome_ingles">Costume Design</p>
+            <p class="categoria_pontuacao">(5 pontos)</p>
+            <label><input type="radio" name="figurino" class="Um_Completo_Desconhecido" value="Um Completo Desconhecido" required> Um Completo Desconhecido</label>
+            <label><input type="radio" name="figurino" class="Conclave" value="Conclave"> Conclave</label>
+            <label><input type="radio" name="figurino" class="Gladiador" value="Gladiador II"> Gladiador II</label>
+            <label><input type="radio" name="figurino" class="Nosferatu" value="Nosferatu"> Nosferatu</label>
+            <label><input type="radio" name="figurino" class="Wicked" value="Wicked"> Wicked</label>
+        </div>
+
+        <div class="categoria">
+            <h2 class="categoria_nome">Edição</h2>
+            <p class="categoria_nome_ingles">Film Editing</p>
+            <p class="categoria_pontuacao">(5 pontos)</p>
+            <label><input type="radio" name="edicao" class="Anora" value="Anora" required> Anora</label>
+            <label><input type="radio" name="edicao" class="Conclave" value="Conclave"> Conclave</label>
+            <label><input type="radio" name="edicao" class="O_Brutalista" value="O Brutalista"> O Brutalista</label>
+            <label><input type="radio" name="edicao" class="Emilia_Perez" value="Emilia Pérez"> Emilia Pérez</label>
+            <label><input type="radio" name="edicao" class="Wicked" value="Wicked"> Wicked</label>
+        </div>
+
+        <div class="categoria">
+            <h2 class="categoria_nome">Maquiagem e Penteado</h2>
+            <p class="categoria_nome_ingles">Makeup and Hairstyling</p>
+            <p class="categoria_pontuacao">(5 pontos)</p>
+            <label><input type="radio" name="maquiagem_e_penteado" class="Um_Homem_Diferente" value="Um Homem Diferente" required> Um Homem Diferente</label>
+            <label><input type="radio" name="maquiagem_e_penteado" class="Emilia_Perez" value="Emilia Pérez"> Emilia Pérez</label>
+            <label><input type="radio" name="maquiagem_e_penteado" class="Nosferatu" value="Nosferatu"> Nosferatu</label>
+            <label><input type="radio" name="maquiagem_e_penteado" class="A_Substancia" value="A Substância"> A Substância</label>
+            <label><input type="radio" name="maquiagem_e_penteado" class="Wicked" value="Wicked"> Wicked</label>
+        </div>
+
+        <div class="categoria">
+            <h2 class="categoria_nome">Design de Produção</h2>
+            <p class="categoria_nome_ingles">Production Design</p>
+            <p class="categoria_pontuacao">(5 pontos)</p>
+            <label><input type="radio" name="design_producao" class="O_Brutalista" value="O Brutalista" required> O Brutalista</label>
+            <label><input type="radio" name="design_producao" class="Conclave" value="Conclave"> Conclave</label>
+            <label><input type="radio" name="design_producao" class="Duna" value="Duna: Parte II"> Duna: Parte II</label>
+            <label><input type="radio" name="design_producao" class="Nosferatu" value="Nosferatu"> Nosferatu</label>
+            <label><input type="radio" name="design_producao" class="Wicked" value="Wicked"> Wicked</label>
+        </div>
+
+        <div class="categoria">
+            <h2 class="categoria_nome">Efeitos Visuais</h2>
+            <p class="categoria_nome_ingles">Visual Effects</p>
+            <p class="categoria_pontuacao">(5 pontos)</p>
+            <label><input type="radio" name="efeitos_visuais" class="Alien" value="Alien: Romulus" required> Alien: Romulus</label>
+            <label><input type="radio" name="efeitos_visuais" class="Better_Man" value="Better Man"> Better Man</label>
+            <label><input type="radio" name="efeitos_visuais" class="Duna" value="Duna: Parte II"> Duna: Parte II</label>
+            <label><input type="radio" name="efeitos_visuais" class="Planeta_dos_Macacos" value="Planeta dos Macacos: O Reinado"> Planeta dos Macacos: O Reinado</label>
+            <label><input type="radio" name="efeitos_visuais" class="Wicked" value="Wicked"> Wicked</label>
+        </div>
+
+        <div class="categoria">
+            <h2 class="categoria_nome">Som</h2>
+            <p class="categoria_nome_ingles">Sound</p>
+            <p class="categoria_pontuacao">(5 pontos)</p>
+            <label><input type="radio" name="som" class="Um_Completo_Desconhecido" value="Um Completo Desconhecido" required> Um Completo Desconhecido</label>
+            <label><input type="radio" name="som" class="Robo_Selvagem" value="Robô Selvagem"> Robô Selvagem</label>
+            <label><input type="radio" name="som" class="Emilia_Perez" value="Emilia Pérez"> Emilia Pérez</label>
+            <label><input type="radio" name="som" class="Duna" value="Duna: Parte II"> Duna: Parte II</label>
+            <label><input type="radio" name="som" class="Wicked" value="Wicked"> Wicked</label>
+        </div>
+
+        <div class="categoria">
+            <h2 class="categoria_nome">Curta-metragem de Animação</h2>
+            <p class="categoria_nome_ingles">Animated Short Film</p>
+            <p class="categoria_pontuacao">(2 pontos)</p>
+            <label><input type="radio" name="curta_animacao" class="Beaufitul_Men" value="Beaufitul Men" required> Beaufitul Men</label>
+            <label><input type="radio" name="curta_animacao" class="In_A_Shadow_Of_Cypress" value="In A Shadow Of Cypress"> In A Shadow Of Cypress</label>
+            <label><input type="radio" name="curta_animacao" class="Magic_Candies" value="Magic Candies"> Magic Candies</label>
+            <label><input type="radio" name="curta_animacao" class="Wander_To_Wonder" value="Wander To Wonder"> Wander To Wonder</label>
+            <label><input type="radio" name="curta_animacao" class="Yuck" value="Yuck!"> Yuck!</label>
+        </div>
+
+        <div class="categoria">
+            <h2 class="categoria_nome">Documentário de Longa-metragem</h2>
+            <p class="categoria_nome_ingles">Documentary Feature Film</p>
+            <p class="categoria_pontuacao">(2 pontos)</p>
+            <label><input type="radio" name="doc_longa" class="Black_Box_Diares" value="Black Box Diares" required> Black Box Diares</label>
+            <label><input type="radio" name="doc_longa" class="No Other Land" value="No Other Land"> No Other Land</label>
+            <label><input type="radio" name="doc_longa" class="Guerra_de_Porcelana" value="Guerra de Porcelana"> Guerra de Porcelana</label>
+            <label><input type="radio" name="doc_longa" class="Trilha_Sonora_Para_Um_Golpe_de_Estado" value="Trilha Sonora Para Um Golpe de Estado"> Trilha Sonora Para Um Golpe de Estado</label>
+            <label><input type="radio" name="doc_longa" class="Sugarcane" value="Sugarcane"> Sugarcane</label>
+        </div>
+
+        <div class="categoria">
+            <h2 class="categoria_nome">Documentário de Curta-metragem</h2>
+            <p class="categoria_nome_ingles">Documentary Short Film</p>
+            <p class="categoria_pontuacao">(2 pontos)</p>
+            <label><input type="radio" name="doc_curta" class="Death_By_Numbers" value="Death By Numbers" required> Death By Numbers</label>
+            <label><input type="radio" name="doc_curta" class="Im_Ready_Warden" value="I'm Ready, Warden"> I'm Ready, Warden</label>
+            <label><input type="radio" name="doc_curta" class="O_Incidente" value="O Incidente"> O Incidente</label>
+            <label><input type="radio" name="doc_curta" class="Instruments_Of_A_Beating_Heart" value="Instruments Of A Beating Heart"> Instruments Of A Beating Heart</label>
+            <label><input type="radio" name="doc_curta" class="A_Unica_Mulher_na_Orquestra" value="A Única Mulher na Orquestra"> A Única Mulher na Orquestra</label>
+        </div>
+
+        <div class="categoria">
+            <h2 class="categoria_nome">Curta-metragem em Live Action</h2>
+            <p class="categoria_nome_ingles">Live Action Short Film</p>
+            <p class="categoria_pontuacao">(2 pontos)</p>
+            <label><input type="radio" name="curta_metragem" class="A_Lien" value="A Lien" required> A Lien</label>
+            <label><input type="radio" name="curta_metragem" class="Anuja" value="Anuja"> Anuja</label>
+            <label><input type="radio" name="curta_metragem" class="Im_Not_A_Robot" value="I'm Not A Robot"> I'm Not A Robot</label>
+            <label><input type="radio" name="curta_metragem" class="The_Last_Ranger" value="The Last Ranger"> The Last Ranger</label>
+            <label><input type="radio" name="curta_metragem" class="The_Man_Who_Could_Not_Remain_Silent" value="The Man Who Could Not Remain Silent"> The Man Who Could Not Remain Silent</label>
+        </div>
+
+        <button type="submit">Salvar</button>
+        <button type="submit">Editar</button>
+    </form>
+
+    <div id="resultado"></div>
+
+    <!-- RESULTADO -->
+    <!-- <section id="resultado">
+        <h2>Seus Palpites</h2>
+        <div id="palpites"></div>
+    </section> -->
+</body>
+
+</html>
