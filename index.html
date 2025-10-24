@@ -1,197 +1,31 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Bolão do Oscar 2025</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f0f0f0;
-      padding: 20px;
-    }
-
-    h1, h2 {
-      text-align: center;
-      color: #c90;
-    }
-
-    form {
-      background: #fff;
-      padding: 20px;
-      max-width: 700px;
-      margin: auto;
-      border-radius: 10px;
-    }
-
-    .categoria {
-      margin-bottom: 20px;
-    }
-
-    label {
-      display: block;
-      margin-left: 10px;
-    }
-
-    button {
-      display: block;
-      margin: 30px auto 10px;
-      padding: 10px 20px;
-      background: #c90;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    #resultado, #ranking {
-      max-width: 700px;
-      margin: 20px auto;
-      padding: 20px;
-      background: #eef;
-      border-radius: 10px;
-    }
-
-    input[type="text"] {
-      width: 100%;
-      padding: 8px;
-      margin-bottom: 20px;
-      font-size: 1rem;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bolão TOGT - Login</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
 </head>
+
 <body>
 
-<h1>Bolão do Oscar 2025</h1>
+  <h1>Bem-vinde ao Bolão The Oscar Goes To...!</h1>
 
-<form id="bolaoForm">
-  <input type="text" name="nome" placeholder="Digite seu nome" required />
+  <div class="form-container">
+    
 
-  <div class="categoria">
-    <h3>Melhor Filme (10 pontos)</h3>
-    <label><input type="radio" name="melhor_filme" value="Oppenheimer" required> Oppenheimer</label>
-    <label><input type="radio" name="melhor_filme" value="Barbie"> Barbie</label>
   </div>
 
-  <div class="categoria">
-    <h3>Melhor Ator (10 pontos)</h3>
-    <label><input type="radio" name="melhor_ator" value="Cillian Murphy" required> Cillian Murphy</label>
-    <label><input type="radio" name="melhor_ator" value="Bradley Cooper"> Bradley Cooper</label>
-  </div>
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js"></script>
 
-  <div class="categoria">
-    <h3>Melhor Atriz (10 pontos)</h3>
-    <label><input type="radio" name="melhor_atriz" value="Emma Stone" required> Emma Stone</label>
-    <label><input type="radio" name="melhor_atriz" value="Lily Gladstone"> Lily Gladstone</label>
-  </div>
-
-  <div class="categoria">
-    <h3>Fotografia (5 pontos)</h3>
-    <label><input type="radio" name="fotografia" value="Oppenheimer" required> Oppenheimer</label>
-    <label><input type="radio" name="fotografia" value="Maestro"> Maestro</label>
-  </div>
-
-  <div class="categoria">
-    <h3>Efeitos Visuais (5 pontos)</h3>
-    <label><input type="radio" name="efeitos" value="Godzilla Minus One" required> Godzilla Minus One</label>
-    <label><input type="radio" name="efeitos" value="Napoleão"> Napoleão</label>
-  </div>
-
-  <div class="categoria">
-    <h3>Filme Internacional (1 ponto)</h3>
-    <label><input type="radio" name="internacional" value="A Sociedade da Neve" required> A Sociedade da Neve</label>
-    <label><input type="radio" name="internacional" value="Zona de Interesse"> Zona de Interesse</label>
-  </div>
-
-  <button type="submit">Salvar Palpite</button>
-</form>
-
-<div id="resultado"></div>
-<div id="ranking"></div>
-
-<script>
-  const vencedores = {
-    melhor_filme: "Oppenheimer",
-    melhor_ator: "Cillian Murphy",
-    melhor_atriz: "Emma Stone",
-    fotografia: "Oppenheimer",
-    efeitos: "Godzilla Minus One",
-    internacional: "Zona de Interesse"
-  };
-
-  const pesos = {
-    melhor_filme: 10,
-    melhor_ator: 10,
-    melhor_atriz: 10,
-    fotografia: 5,
-    efeitos: 5,
-    internacional: 1
-  };
-
-  const form = document.getElementById("bolaoForm");
-  const resultadoDiv = document.getElementById("resultado");
-  const rankingDiv = document.getElementById("ranking");
-
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    const formData = new FormData(form);
-    const nome = formData.get("nome")?.trim();
-
-    if (!nome) {
-      alert("Digite seu nome!");
-      return;
-    }
-
-    let totalPontos = 0;
-    let detalhes = `<h2>Palpite de ${nome}</h2><ul>`;
-
-    for (let [categoria, palpite] of formData.entries()) {
-      if (categoria === "nome") continue;
-
-      const vencedor = vencedores[categoria];
-      const pontos = palpite === vencedor ? pesos[categoria] : 0;
-      totalPontos += pontos;
-
-      detalhes += `<li><strong>${categoria.replace("_", " ").toUpperCase()}</strong>: ${palpite} — <em>${vencedor}</em> — <strong>${pontos} pontos</strong></li>`;
-    }
-
-    detalhes += `</ul><h3>Total: ${totalPontos} pontos</h3>`;
-    resultadoDiv.innerHTML = detalhes;
-
-    salvarParticipante(nome, totalPontos);
-    mostrarRanking();
-    form.reset();
-  });
-
-  function salvarParticipante(nome, pontos) {
-    let participantes = JSON.parse(localStorage.getItem("participantesOscar2025")) || [];
-    participantes.push({ nome, pontos });
-    localStorage.setItem("participantesOscar2025", JSON.stringify(participantes));
-  }
-
-  function mostrarRanking() {
-    const participantes = JSON.parse(localStorage.getItem("participantesOscar2025")) || [];
-
-    if (participantes.length === 0) {
-      rankingDiv.innerHTML = "";
-      return;
-    }
-
-    participantes.sort((a, b) => b.pontos - a.pontos); // ordem decrescente
-
-    let html = `<h2>Ranking</h2><ol>`;
-    for (let p of participantes) {
-      html += `<li>${p.nome} — <strong>${p.pontos} pts</strong></li>`;
-    }
-    html += `</ol>`;
-
-    rankingDiv.innerHTML = html;
-  }
-
-  // Mostrar ranking ao carregar a página
-  window.addEventListener("load", mostrarRanking);
-</script>
-
+  <!-- Meus scripts -->
+  <script src="firebase.js"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>
