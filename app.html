@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bolão do Oscar 🎬</title>
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+<body>
+
+    <div class="app">
+
+        <!-- MENU LATERAL -->
+        <aside class="sidebar">
+            <h2>🎬 Bolão Oscar</h2>
+
+            <nav>
+                <ul>
+                    <li data-page="filmes" class="active">Filmes</li>
+                    <li data-page="categorias">Categorias</li>
+                    <li data-page="bolao">Bolão</li>
+                    <li data-page="perfil">Meu Perfil</li>
+                </ul>
+            </nav>
+
+            <button id="logoutBtn">Sair</button>
+        </aside>
+
+        <!-- CONTEÚDO -->
+        <main class="content">
+            <section id="filmes" class="page active">
+
+                <h1>Filmes Indicados</h1>
+
+                <div class="status">
+                    <strong>Vistos:</strong> <span id="vistos">0</span> |
+                    <strong>Faltam:</strong> <span id="faltam">0</span>
+                </div>
+
+                <div class="filtros">
+                    <label for="ordem">Ordenar por:</label>
+                    <select id="ordem">
+                        <option value="alfabetica">A -Z</option>
+                        <option value="indicacoes">Indicações</option>
+                    </select>
+                </div>
+
+                <table border="1" cellpadding="8" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Filme</th>
+                            <th>Indicações</th>
+                            <th>Já vi?</th>
+                            <th>Plataforma</th>
+                        </tr>
+                    </thead>
+                    <tbody id="filmesTabela"></tbody>
+                </table>
+
+                <br>
+                <button id="salvarFilmes">Salvar</button>
+                <p id="filmesMsg"></p>
+
+            </section>
+
+            <section id="categorias" class="page">
+                <h1>Categorias</h1>
+                <div id="listaCategorias"></div>
+            </section>
+
+            <section id="bolao" class="page">
+                <h1>Bolão</h1>
+            </section>
+
+            <section id="perfil" class="page">
+                <h1>Meu Perfil</h1>
+            </section>
+        </main>
+
+    </div>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+
+    <script src="js/firebase.js"></script>
+    <script src="js/guard.js"></script>
+    <script src="js/logout.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/filmes.js"></script>
+    <script src="js/categorias.js"></script>
+
+</body>
+
+</html>
