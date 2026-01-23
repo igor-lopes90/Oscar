@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Enviar Categorias para Firebase</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+
+        #log {
+            margin-top: 20px;
+            white-space: pre-line;
+            background: #f0f0f0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Enviar Categorias para Firebase</h1>
+    <button id="enviarBtn">Enviar Categorias</button>
+
+    <div id="log"></div>
+
+    <!-- Firebase compat -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+
+    <script>
+        const firebaseConfig = {
+            // apiKey: "AIzaSyD8Y8OnwYUt9eKjl-LMqlJqGzUOHZMV-I8",
+            // authDomain: "bolao-the-oscar-goes-to.firebaseapp.com",
+            // projectId: "bolao-the-oscar-goes-to",
+            // storageBucket: "bolao-the-oscar-goes-to.firebasestorage.app",
+            // messagingSenderId: "891811504511",
+            // appId: "1:891811504511:web:30c37a80b57befe88b3a4a"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+        const categorias = [
+            { nome: "Animação", peso: 10 },
+            { nome: "Animação de curta-metragem", peso: 2 },
+            { nome: "Ator", peso: 10 },
+            { nome: "Ator Coadjuvante", peso: 10 },
+            { nome: "Atriz", peso: 10 },
+            { nome: "Atriz Coadjuvante", peso: 10 },
+            { nome: "Canção Original", peso: 10 },
+            { nome: "Curta-metragem com Atores", peso: 2 },
+            { nome: "Direção", peso: 10 },
+            { nome: "Direção de Arte", peso: 5 },
+            { nome: "Documentário", peso: 2 },
+            { nome: "Documentário em Curta-Metragem", peso: 2 },
+            { nome: "Efeitos Visuais", peso: 5 },
+            { nome: "Figurino", peso: 5 },
+            { nome: "Filme Internacional", peso: 5 },
+            { nome: "Fotografia", peso: 5 },
+            { nome: "Maquiagem e Cabelo", peso: 5 },
+            { nome: "Melhor Filme", peso: 10 },
+            { nome: "Montagem", peso: 5 },
+            { nome: "Roteiro Adaptado", peso: 10 },
+            { nome: "Roteiro Original", peso: 10 },
+            { nome: "Seleção de Elenco", peso: 5 },
+            { nome: "Som", peso: 5 },
+            { nome: "Trilha Sonora Original", peso: 10 }
+        ];
+
+        const log = document.getElementById("log");
+        const btn = document.getElementById("enviarBtn");
+
+        btn.addEventListener("click", () => {
+            log.textContent = "Enviando categorias...\n";
+
+            // Criar um array de promessas
+            const promessas = categorias.map(cat => {
+                return db.collection("categorias").add({
+                    nome: cat.nome,
+                    peso: cat.peso,
+                    ativa: true
+                })
+                    .then(() => log.textContent += `✅ Categoria '${cat.nome}' adicionada\n`)
+                    .catch(err => log.textContent += `❌ Erro ao adicionar '${cat.nome}': ${err}\n`);
+            });
+
+            // Aguardar todas as promessas
+            Promise.all(promessas).then(() => {
+                log.textContent += "\nTodas as categorias foram enviadas!";
+            });
+        });
+    </script>
+
+</body>
+
+</html>

@@ -21,7 +21,6 @@
         <!-- MENU LATERAL -->
         <aside class="sidebar">
             <h2>🎬 Bolão Oscar</h2>
-
             <nav>
                 <ul>
                     <li data-page="filmes" class="active">Filmes</li>
@@ -30,14 +29,14 @@
                     <li data-page="perfil">Meu Perfil</li>
                 </ul>
             </nav>
-
             <button id="logoutBtn">Sair</button>
         </aside>
 
         <!-- CONTEÚDO -->
         <main class="content">
-            <section id="filmes" class="page active">
 
+            <!-- FILMES -->
+            <section id="filmes" class="page active">
                 <h1>Filmes Indicados</h1>
 
                 <div class="status">
@@ -48,7 +47,7 @@
                 <div class="filtros">
                     <label for="ordem">Ordenar por:</label>
                     <select id="ordem">
-                        <option value="alfabetica">A -Z</option>
+                        <option value="alfabetica">A - Z</option>
                         <option value="indicacoes">Indicações</option>
                     </select>
                 </div>
@@ -68,23 +67,65 @@
                 <br>
                 <button id="salvarFilmes">Salvar</button>
                 <p id="filmesMsg"></p>
-
             </section>
 
+            <!-- CATEGORIAS -->
             <section id="categorias" class="page">
                 <h1>Categorias</h1>
-                <div id="listaCategorias"></div>
+
+                <div class="filtros">
+                    <label for="categoriaFiltro">Filtrar por Categoria:</label>
+                    <select id="categoriaFiltro">
+                        <option value="">Todas</option>
+                        <option value="Melhor Filme">Melhor Filme</option>
+                        <option value="Fotografia">Fotografia</option>
+                        <option value="Direção">Direção</option>
+                        <option value="Atriz">Atriz</option>
+                        <option value="Ator">Ator</option>
+                        <option value="Efeitos Visuais">Efeitos Visuais</option>
+                        <option value="Animação">Animação</option>
+                        <option value="Som">Som</option>
+                        <option value="Montagem">Montagem</option>
+                        <option value="Documentário">Documentário</option>
+                        <option value="Direção de Arte">Direção de Arte</option>
+                        <option value="Canção Original">Canção Original</option>
+                        <option value="Filme Internacional">Filme Internacional</option>
+                        <option value="Figurino">Figurino</option>
+                        <option value="Seleção de Elenco">Seleção de Elenco</option>
+                        <option value="Ator Coadjuvante">Ator Coadjuvante</option>
+                        <option value="Roteiro Original">Roteiro Original</option>
+                        <option value="Roteiro Adaptado">Roteiro Adaptado</option>
+                        <option value="Trilha Sonora Original">Trilha Sonora Original</option>
+                        <option value="Atriz Coadjuvante">Atriz Coadjuvante</option>
+                        <option value="Maquiagem e Cabelo">Maquiagem e Cabelo</option>
+                        <option value="Curta-metragem com Atores">Curta-metragem com Atores</option>
+                        <option value="Animação de curta-metragem">Animação de curta-metragem</option>
+                    </select>
+                </div>
+
+                <table border="1" cellpadding="8" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Filme</th>
+                            <th>Já vi?</th>
+                            <th>Bolão</th>
+                        </tr>
+                    </thead>
+                    <tbody id="categoriasTabela"></tbody>
+                </table>
             </section>
 
+            <!-- BOLÃO -->
             <section id="bolao" class="page">
                 <h1>Bolão</h1>
             </section>
 
+            <!-- PERFIL -->
             <section id="perfil" class="page">
                 <h1>Meu Perfil</h1>
             </section>
-        </main>
 
+        </main>
     </div>
 
     <!-- Firebase -->

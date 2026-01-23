@@ -51,3 +51,45 @@
 .page.active {
   display: block;
 }
+
+tr.visto {
+    background-color: #d4edda; /* verde claro */
+}
+
+tr.visto td:first-child::before {
+    content: "✅ ";
+}
+
+.filtros {
+    margin: 10px 0;
+}
+
+select {
+    padding: 4px 6px;
+}
+
+.categoria {
+  margin-bottom: 30px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.categoria h2 {
+  margin-top: 0;
+}
+
+.categoria table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.categoria table th, 
+.categoria table td {
+  text-align: left;
+  padding: 5px 10px;
+}
+
+tr.visto {
+  background-color: #d4edda;
+}
