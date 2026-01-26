@@ -25,6 +25,7 @@
                 <ul>
                     <li data-page="filmes" class="active">Filmes</li>
                     <li data-page="categorias">Categorias</li>
+                    <li data-page="grupos">Grupos</li>
                     <li data-page="bolao">Bolão</li>
                     <li data-page="perfil">Meu Perfil</li>
                 </ul>
@@ -75,9 +76,38 @@
                 <div id="listaCategorias"></div>
             </section>
 
+            <!-- GRUPOS -->
+            <section id="grupos" class="page active">
+                <h1>Meus Grupos</h1>
+
+                <div class="card">
+                    <h3>Criar grupo</h3>
+                    <input type="text" id="nomeGrupo" placeholder="Nome do grupo">
+                    <button id="btnCriarGrupo">Criar</button>
+                </div>
+
+                <div class="card">
+                    <h3>Entrar em um grupo</h3>
+                    <input type="text" id="codigoGrupo" placeholder="Código do grupo">
+                    <button id="btnEntrarGrupo">Entrar</button>
+                    <p id="erroGrupo" class="erro"></p>
+                </div>
+
+                <div id="listaGrupos"></div>
+            </section>
+
             <!-- BOLÃO -->
             <section id="bolao" class="page">
                 <h1>Bolão</h1>
+
+                <label>Selecione o grupo:</label>
+                <select id="grupoSelect"></select>
+
+                <div id="areaPalpites" style="display:none"></div>
+
+                <button id="salvarPalpites">Salvar palpites</button>
+
+                <p id="msgPalpite"></p>
             </section>
 
             <!-- PERFIL -->
@@ -99,7 +129,8 @@
     <script src="js/app.js"></script>
     <script src="js/filmes.js"></script>
     <script src="js/categorias.js"></script>
-
+    <script src="js/grupos.js"></script>
+    <script src="js/bolao.js"></script>
 </body>
 
 </html>

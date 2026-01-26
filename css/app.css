@@ -110,3 +110,65 @@ th {
 #listaCategorias ul {
   padding-left: 18px;
 }
+
+/* Grupos */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+.app {
+  display: flex;
+}
+
+.sidebar {
+  width: 200px;
+  background: #222;
+  color: #fff;
+}
+
+.sidebar li {
+  padding: 12px;
+  cursor: pointer;
+}
+
+.sidebar li.active {
+  background: #444;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+}
+
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 8px;
+}
+
+button {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.erro {
+  color: red;
+}

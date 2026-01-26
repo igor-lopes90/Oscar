@@ -1,0 +1,75 @@
+/* ===== RESET BÁSICO (SEGURO) ===== */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f6fa;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== CONTAINER CENTRAL ===== */
+.auth-container {
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* ===== TÍTULOS ===== */
+.auth-container h1,
+.auth-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* ===== FORM ===== */
+.auth-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-container input {
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.auth-container input:focus {
+  outline: none;
+  border-color: #6c63ff;
+}
+
+/* ===== BOTÃO ===== */
+.auth-container button {
+  padding: 10px;
+  background: #6c63ff;
+  color: #fff;
+  font-size: 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.auth-container button:hover {
+  background: #574fe1;
+}
+
+/* ===== LINKS ===== */
+.auth-container a {
+  color: #6c63ff;
+  text-decoration: none;
+}
+
+.auth-container a:hover {
+  text-decoration: underline;
+}
+
+/* ===== MENSAGENS ===== */
+.auth-container p {
+  text-align: center;
+  margin-top: 10px;
+}

@@ -5,25 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bolão do Oscar | Cadastro 🎬</title>
+    <link rel="stylesheet" href="css/auth.css">
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
 
-    <h1>Criar conta</h1>
+    <div class="auth-container">
+        <h1>Criar conta</h1>
 
-    <form id="cadastroForm">
-        <input type="text" id="nome" placeholder="Nome completo" required><br><br>
-        <input type="email" id="email" placeholder="Email" required><br><br>
-        <input type="password" id="password" placeholder="Senha (mín. 6 caracteres)" required><br><br>
-        <button type="submit">Cadastrar</button>
-    </form>
+        <form id="cadastroForm">
+            <input type="text" id="nome" placeholder="Nome completo" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Senha (mín. 6 caracteres)" required>
+            <button type="submit">Cadastrar</button>
+        </form>
 
-    <p id="cadastroMsg"></p>
+        <p id="cadastroMsg"></p>
 
-    <p>
-        <a href="index.html">Voltar para login</a>
-    </p>
+        <p>
+            <a href="index.html">Voltar para login</a>
+        </p>
+    </div>
 
     <!-- Firebase SDKs -->
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>

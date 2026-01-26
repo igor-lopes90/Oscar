@@ -5,20 +5,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bolão do Oscar | Recuperar Senha 🎬</title>
+  <link rel="stylesheet" href="css/auth.css">
   <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
 </head>
+
 <body>
 
+  <div class="auth-container">
     <h1>Recuperar senha</h1>
 
-  <form id="resetForm">
-    <input type="email" id="email" placeholder="Digite seu e-mail" required><br><br>
-    <button type="submit">Enviar link</button>
-  </form>
+    <form id="resetForm">
+      <input type="email" id="email" placeholder="Digite seu e-mail" required>
+      <button type="submit">Enviar link</button>
+    </form>
 
-  <p id="resetMsg"></p>
+    <p id="resetMsg"></p>
 
-  <p><a href="index.html">Voltar para login</a></p>
+    <p>
+      <a href="index.html">Voltar para login</a>
+    </p>
+  </div>
 
   <!-- Firebase SDKs -->
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
@@ -26,6 +32,7 @@
 
   <script src="js/firebase.js"></script>
   <script src="js/reset.js"></script>
-    
+
 </body>
+
 </html>
