@@ -32,25 +32,21 @@ auth.onAuthStateChanged(async (user) => {
   const uid = user.uid;
 
   try {
-    // 1️⃣ Buscar categorias ativas
     const categoriasSnap = await db
       .collection("categorias")
       .where("ativa", "==", true)
       .get();
 
-    // 2️⃣ Buscar todos os filmes ativos
     const filmesSnap = await db
       .collection("filmes")
       .where("ativo", "==", true)
       .get();
 
-    // 3️⃣ Buscar filmes vistos pelo usuário
     const userSnap = await db
       .collection("userMovies")
       .where("uid", "==", uid)
       .get();
 
-    // Mapear filmes vistos
     const filmesVistos = {};
     userSnap.forEach(doc => {
       filmesVistos[doc.data().movieId] = doc.data().visto;
@@ -58,23 +54,53 @@ auth.onAuthStateChanged(async (user) => {
 
     lista.innerHTML = "";
 
-    // 4️⃣ Para cada categoria, listar os filmes
     categoriasSnap.forEach(catDoc => {
       const categoria = catDoc.data();
-
       let listaFilmes = "";
 
       filmesSnap.forEach(filmeDoc => {
         const filme = filmeDoc.data();
-
         if (!filme.categorias) return;
-        if (!filme.categorias.includes(categoria.nome)) return;
 
         const visto = filmesVistos[filmeDoc.id]
           ? "✅ Já vi"
           : "❌ Não vi";
 
-        listaFilmes += `<li>${filme.titulo} — ${visto}</li>`;
+        let pertenceCategoria = false;
+        let indicados = [];
+
+        filme.categorias.forEach(cat => {
+          // categoria simples
+          if (typeof cat === "string" && cat === categoria.nome) {
+            pertenceCategoria = true;
+          }
+
+          // categoria com pessoas
+          if (typeof cat === "object" && cat.nome === categoria.nome) {
+            pertenceCategoria = true;
+
+            if (Array.isArray(cat.indicados)) {
+              indicados = indicados.concat(cat.indicados);
+            }
+
+            if (cat.indicado) {
+              indicados.push({
+                nome: cat.indicado,
+                filme: filme.titulo
+              });
+            }
+          }
+        });
+
+        if (!pertenceCategoria) return;
+
+        if (indicados.length > 0) {
+          indicados.forEach(pessoa => {
+            listaFilmes += `<li>${pessoa.nome} – ${pessoa.filme} — ${visto}</li>`;
+          });
+        } else {
+          listaFilmes += `<li>${filme.titulo} — ${visto}</li>`;
+        }
       });
 
       if (!listaFilmes) {

@@ -15,7 +15,6 @@
     </head>
 
 <body>
-
     <div class="app">
 
         <!-- MENU LATERAL -->
@@ -77,7 +76,7 @@
             </section>
 
             <!-- GRUPOS -->
-            <section id="grupos" class="page active">
+            <section id="grupos" class="page">
                 <h1>Meus Grupos</h1>
 
                 <div class="card">
@@ -103,7 +102,8 @@
                 <label>Selecione o grupo:</label>
                 <select id="grupoSelect"></select>
 
-                <div id="areaPalpites" style="display:none"></div>
+                <h3>Categorias</h3>
+                <div id="areaPalpites"></div>
 
                 <button id="salvarPalpites">Salvar palpites</button>
 
@@ -130,7 +130,9 @@
     <script src="js/filmes.js"></script>
     <script src="js/categorias.js"></script>
     <script src="js/grupos.js"></script>
-    <script src="js/bolao.js"></script>
+    <!-- <script src="js/bolao.js"></script> -->
+    <script type="module" src="js/bolao.js"></script>
+
 </body>
 
 </html>
