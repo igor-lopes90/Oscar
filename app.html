@@ -26,9 +26,17 @@
                     <li data-page="categorias">Categorias</li>
                     <li data-page="grupos">Grupos</li>
                     <li data-page="bolao">Bolão</li>
-                    <li data-page="perfil">Meu Perfil</li>
                 </ul>
             </nav>
+
+            <button data-page="regras">Regras</button>
+
+            <button data-page="ranking">🏆 Ranking</button>
+
+            <button id="processarResultados">
+                Processar Resultados Oficiais
+            </button>
+
             <button id="logoutBtn">Sair</button>
         </aside>
 
@@ -110,9 +118,108 @@
                 <p id="msgPalpite"></p>
             </section>
 
-            <!-- PERFIL -->
-            <section id="perfil" class="page">
-                <h1>Meu Perfil</h1>
+            <!-- REGRAS -->
+            <section data-page-content="regras" style="display:none;">
+                <div class="card">
+                    <h2>🏆 Regras do Bolão do Oscar 2026</h2>
+
+                    <h3>🎬 Como funciona</h3>
+                    <p>
+                        Cada participante deve escolher um vencedor para cada categoria do Oscar.
+                        Os palpites são feitos dentro de um grupo e todos os participantes do grupo competem entre si.
+                    </p>
+
+                    <h3>⏰ Prazo para palpites</h3>
+                    <p>
+                        Os palpites podem ser alterados livremente até o dia
+                        <strong>15/03/2026 às 17h (horário de Brasília)</strong>.
+                        Após esse horário, não será possível salvar ou modificar palpites.
+                    </p>
+
+                    <h3>🧮 Sistema de pontuação</h3>
+                    <ul>
+                        <li>Categorias de peso <strong>10</strong> → 10 pontos</li>
+                        <li>Categorias de peso <strong>5</strong> → 5 pontos</li>
+                        <li>Categorias de peso <strong>2</strong> → 2 pontos</li>
+                    </ul>
+                    <p>Se o palpite estiver errado, a pontuação da categoria é zero.</p>
+
+                    <h3>👤 Categorias com pessoas</h3>
+                    <p>
+                        Em categorias como Ator, Atriz, Direção e Canção Original,
+                        o palpite deve considerar a pessoa vencedora vinculada ao filme indicado.
+                    </p>
+
+                    <h3>📊 Resultado e ranking</h3>
+                    <p>
+                        Após a divulgação oficial dos vencedores do Oscar, o sistema calcula automaticamente
+                        a pontuação de cada participante e exibe o ranking do grupo.
+                    </p>
+
+                    <h3>👥 Grupos</h3>
+                    <ul>
+                        <li>Qualquer usuário pode criar ou entrar em um grupo</li>
+                        <li>O criador do grupo é o administrador</li>
+                        <li>O administrador pode remover membros</li>
+                        <li>Participantes podem sair do grupo a qualquer momento</li>
+                    </ul>
+
+                    <h3>⚠️ Regras gerais</h3>
+                    <ul>
+                        <li>Apenas um palpite por usuário em cada grupo</li>
+                        <li>Salvar novamente substitui o palpite anterior</li>
+                        <li>Alterações após o prazo são bloqueadas</li>
+                    </ul>
+
+                    <h3>🏁 Critério de desempate</h3>
+                    <p>
+                        Em caso de empate na pontuação final, será aplicado o seguinte critério, obedecendo
+                        rigorosamente a ordem de prioridade:
+                    </p>
+                    <ol>
+                        <li>Melhor Filme (peso 10)</li>
+                        <li>Direção (peso 10)</li>
+                        <li>Atriz (peso 10)</li>
+                        <li>Ator (peso 10)</li>
+                        <li>Atriz Coadjuvante (peso 10)</li>
+                        <li>Ator Coadjuvante (peso 10)</li>
+                        <li>Animação (peso 10)</li>
+                        <li>Roteiro Original (peso 10)</li>
+                        <li>Roteiro Adaptado (peso 10)</li>
+                        <li>Canção Original (peso 10)</li>
+                        <li>Trilha Sonora Original (peso 10)</li>
+                        <li>Filme Internacional (peso 5)</li>
+                        <li>Seleção de Elenco (peso 5)</li>
+                        <li>Direção de Arte (peso 5)</li>
+                        <li>Efeitos Visuais (peso 5)</li>
+                        <li>Fotografia (peso 5)</li>
+                        <li>Figurino (peso 5)</li>
+                        <li>Maquiagem e Cabelo (peso 5)</li>
+                        <li>Montagem (peso 5)</li>
+                        <li>Som (peso 5)</li>
+                        <li>Documentário (peso 2)</li>
+                        <li>Curta-metragem com Atores (peso 2)</li>
+                        <li>Documentário em Curta-Metragem (peso 2)</li>
+                        <li>Animação de curta-metragem (peso 2)</li>
+                    </ol>
+                    <p>
+                        Se todos os participantes empatados tiverem acertado uma determinada categoria, o sistema passa
+                        automaticamente para a próxima da lista.
+                        Persistindo o empate após todos os critérios, o empate será mantido.
+                    </p>
+                </div>
+            </section>
+
+
+            <!-- RANKING -->
+            <section id="ranking" class="page">
+                <h2>🏆 Ranking do Grupo</h2>
+
+                <select id="grupoRanking">
+                    <option value="">Selecione o grupo</option>
+                </select>
+
+                <div id="listaRanking"></div>
             </section>
 
         </main>
@@ -126,12 +233,13 @@
     <script src="js/firebase.js"></script>
     <script src="js/guard.js"></script>
     <script src="js/logout.js"></script>
+
     <script src="js/app.js"></script>
     <script src="js/filmes.js"></script>
     <script src="js/categorias.js"></script>
     <script src="js/grupos.js"></script>
-    <!-- <script src="js/bolao.js"></script> -->
-    <script type="module" src="js/bolao.js"></script>
+    <script src="js/bolao.js"></script>
+    <script src="js/ranking.js"></script>
 
 </body>
 

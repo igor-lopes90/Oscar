@@ -42,16 +42,25 @@ async function carregarGrupos() {
       const grupo = doc.data();
       const isGestor = grupo.criador === user.uid;
 
-      const nomesUsuarios = await buscarNomesUsuarios(Object.keys(grupo.membros));
+      const nomesUsuarios = await buscarNomesUsuarios(
+        Object.keys(grupo.membros)
+      );
 
       listaGrupos.innerHTML += `
         <div class="card">
           <strong>${grupo.nome}</strong><br>
           Código: ${doc.id}<br><br>
 
-          <button onclick="sairDoGrupo('${doc.id}', ${isGestor})">
-            Sair do grupo
-          </button>
+          ${isGestor ? `
+            <button onclick="excluirGrupo('${doc.id}')"
+              style="background:#c0392b;color:#fff">
+              Excluir grupo
+            </button>
+          ` : `
+            <button onclick="sairDoGrupo('${doc.id}')">
+              Sair do grupo
+            </button>
+          `}
 
           ${isGestor ? `
             <hr>
@@ -59,7 +68,13 @@ async function carregarGrupos() {
             <ul>
               ${Object.keys(grupo.membros).map(uid => `
                 <li>
-                  ${nomesUsuarios[uid]} ${uid === user.uid ? "(você)" : `<button onclick="removerMembro('${doc.id}', '${uid}')">Remover</button>`}
+                  ${nomesUsuarios[uid]}
+                  ${uid === user.uid
+                    ? " (você)"
+                    : `<button onclick="removerMembro('${doc.id}', '${uid}')">
+                        Remover
+                      </button>`
+                  }
                 </li>
               `).join("")}
             </ul>
@@ -146,16 +161,11 @@ btnEntrarGrupo.addEventListener("click", async () => {
 });
 
 /* =========================
-   🔹 SAIR DO GRUPO
+   🔹 SAIR DO GRUPO (MEMBRO)
 ========================= */
-window.sairDoGrupo = async function(grupoId, isGestor) {
+window.sairDoGrupo = async function(grupoId) {
   const user = auth.currentUser;
   if (!user) return;
-
-  if (isGestor) {
-    alert("O gestor não pode sair do grupo.");
-    return;
-  }
 
   const confirmar = confirm("Tem certeza que deseja sair do grupo?");
   if (!confirmar) return;
@@ -167,6 +177,25 @@ window.sairDoGrupo = async function(grupoId, isGestor) {
     carregarGrupos();
   } catch (e) {
     console.error("❌ Erro ao sair do grupo:", e);
+  }
+};
+
+/* =========================
+   🔹 EXCLUIR GRUPO (GESTOR)
+========================= */
+window.excluirGrupo = async function(grupoId) {
+  const confirmar = confirm(
+    "⚠️ Isso vai excluir o grupo e todos os dados relacionados.\nDeseja continuar?"
+  );
+  if (!confirmar) return;
+
+  try {
+    await db.collection("grupos").doc(grupoId).delete();
+    alert("Grupo excluído com sucesso.");
+    carregarGrupos();
+  } catch (e) {
+    console.error("❌ Erro ao excluir grupo:", e);
+    alert("Erro ao excluir grupo.");
   }
 };
 

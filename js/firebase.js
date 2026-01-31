@@ -1,4 +1,5 @@
-// Configuração do Firebase
+// firebase.js — COMPAT (v10)
+
 const firebaseConfig = {
   apiKey: "AIzaSyD8Y8OnwYUt9eKjl-LMqlJqGzUOHZMV-I8",
   authDomain: "bolao-the-oscar-goes-to.firebaseapp.com",
@@ -8,11 +9,16 @@ const firebaseConfig = {
   appId: "1:891811504511:web:30c37a80b57befe88b3a4a"
 };
 
-// Inicializa o Firebase
+// Inicializa Firebase
 firebase.initializeApp(firebaseConfig);
 
-// Serviços que vamos usar no projeto
+// Serviços globais
 const auth = firebase.auth();
 const db = firebase.firestore();
 
-console.log("Firebase inicializado com sucesso 🔥");
+// 🔥 deixa GLOBAL
+window.auth = auth;
+window.db = db;
+window.firebase = firebase;
+
+console.log("🔥 Firebase COMPAT inicializado com sucesso");
