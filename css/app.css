@@ -12,14 +12,20 @@ form {
   margin: 20px auto;
 }
 
-input, select, button {
-  width: 100%;
-  padding: 8px;
+input,
+select,
+button {
+  padding: 6px 8px;
+  font-size: 14px;
   margin-bottom: 8px;
+  box-sizing: border-box;
 }
 
 button {
   cursor: pointer;
+  border-radius: 4px;
+  border: 1px solid black;
+  padding: auto;
 }
 
 /* ===== APP ===== */
@@ -28,12 +34,34 @@ button {
   min-height: 100vh;
 }
 
-/* ===== SIDEBAR ===== */
+/* ===== SIDEBAR FIXO ===== */
 .sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 220px;
+  height: 100vh;
   background: #111;
   color: #fff;
   padding: 16px;
+  overflow-y: auto;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hamburger {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
 }
 
 .sidebar h2 {
@@ -44,6 +72,7 @@ button {
 .sidebar ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .sidebar li {
@@ -56,19 +85,21 @@ button {
 }
 
 .sidebar button {
-  margin-top: 20px;
+  width: 100%;
+  margin-top: 12px;
   background: #c00;
   color: #fff;
-  border: none;
+  padding: 6px 8px;
+  font-size: 14px;
 }
-
-
 
 /* ===== CONTEÚDO ===== */
 .content {
+  margin-left: 220px;
   flex: 1;
   padding: 20px;
   background: #fff;
+  box-sizing: border-box;
 }
 
 /* ===== PÁGINAS ===== */
@@ -113,9 +144,18 @@ tr.visto.novo {
   animation: pulse 0.4s ease-in-out;
 }
 
+#filmesTabela select {
+  width: 100%;
+}
+
 @keyframes pulse {
-  0%   { background-color: #c8e6c9; }
-  100% { background-color: #e8f5e9; }
+  0% {
+    background-color: #c8e6c9;
+  }
+
+  100% {
+    background-color: #e8f5e9;
+  }
 }
 
 /* ===== CATEGORIAS ===== */
@@ -128,76 +168,45 @@ tr.visto.novo {
   padding-left: 18px;
 }
 
-/* Grupos */
-
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-}
-
-.app {
-  display: flex;
-}
-
-.sidebar {
-  width: 200px;
-  background: #222;
-  color: #fff;
-}
-
-.sidebar li {
-  padding: 12px;
-  cursor: pointer;
-}
-
-.sidebar li.active {
-  background: #444;
-}
-
-.content {
-  flex: 1;
-  padding: 20px;
-}
-
-.page {
-  display: none;
-}
-
-.page.active {
-  display: block;
-}
-
+/* ===== GRUPOS ===== */
 .card {
   background: #fff;
   border: 1px solid #ddd;
-  padding: 15px;
-  margin-bottom: 15px;
+  padding: 12px;
+  margin-bottom: 12px;
   border-radius: 6px;
 }
 
 input {
-  width: 100%;
-  padding: 8px;
+  width: auto;
+  padding: 6px 8px;
+  font-size: 14px;
   margin-bottom: 8px;
 }
 
 button {
-  padding: 8px 12px;
+  padding: 6px 10px;
+  font-size: 14px;
   cursor: pointer;
 }
 
+/* mensagens de erro */
 .erro {
   color: red;
+  font-size: 13px;
+}
+
+#areaPalpites select {
+  margin: 6px 0;
 }
 
 /* ===== RANKING ===== */
-
 .ranking-card {
   display: grid;
   grid-template-columns: 50px 1fr 80px;
   align-items: center;
-  padding: 12px;
-  margin-bottom: 8px;
+  padding: 10px;
+  margin-bottom: 6px;
   border-radius: 6px;
   font-weight: bold;
 }
@@ -225,19 +234,19 @@ button {
 
 /* comparativo */
 .comparativo {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .comparativo h3 {
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .comparativo-item {
   background: #fafafa;
   border: 1px solid #ddd;
-  padding: 10px;
+  padding: 8px;
   border-radius: 6px;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .comparativo-item ul {
@@ -257,6 +266,77 @@ button {
 }
 
 .comparativo-item .erro {
-   color: #c00;
+  color: #c00;
 }
 
+/* ===== RESPONSIVO COM HAMBURGER ===== */
+@media (max-width: 768px) {
+  .app {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-sizing: border-box;
+  }
+
+  .sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .sidebar-header h2 {
+    margin: auto;
+    font-size: 2rem;
+  }
+
+  .sidebar .hamburger {
+    display: block;
+    font-size: 20px;
+    /* menor que antes */
+    width: 20%;
+    padding: 4px 8px;
+  }
+
+  /* TODOS os itens do menu escondidos por padrão */
+  .sidebar nav,
+  .sidebar .menu-btn {
+    display: none;
+  }
+
+  /* Só aparecem quando o menu está ativo */
+  .sidebar.active nav,
+  .sidebar.active .menu-btn {
+    display: block;
+    margin-top: 4px;
+  }
+
+  .sidebar ul {
+    flex-direction: column;
+    width: 80%;
+    margin:auto;
+  }
+
+  .sidebar li,
+  .sidebar button.menu-btn {
+    text-align: center;
+    margin: 4px 0;
+  }
+
+  /* Ajusta o conteúdo abaixo do menu */
+  .content {
+    margin-left: 0;
+    margin-top: calc(1em + 50px);
+    /* espaço para o menu */
+    padding: 15px;
+  }
+}

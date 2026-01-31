@@ -45,3 +45,37 @@ document.querySelectorAll("[data-page]").forEach(btn => {
     });
   });
 });
+
+// ====== MENU HAMBURGUER ======
+const menuToggle = document.getElementById('menuToggle');
+const sidebar = document.querySelector('.sidebar');
+const sidebarLinks = sidebar.querySelectorAll('li, button:not(.hamburger)');
+
+function closeMenu() {
+  sidebar.classList.remove('active');
+}
+
+// abrir/fechar ao clicar no hamburger
+menuToggle.addEventListener('click', () => {
+  sidebar.classList.toggle('active');
+});
+
+// fechar automaticamente ao clicar em item ou botão
+sidebarLinks.forEach(link => {
+  link.addEventListener('click', closeMenu);
+});
+
+// Ajuste do conteúdo no mobile para não ficar embaixo do menu
+function ajustarConteudo() {
+  const content = document.querySelector('.content');
+  const sidebarHeight = sidebar.offsetHeight;
+  if(window.innerWidth <= 768) {
+    content.style.marginTop = sidebarHeight + 'px';
+  } else {
+    content.style.marginTop = '0';
+  }
+}
+
+// Atualiza sempre que muda tamanho da tela
+window.addEventListener('resize', ajustarConteudo);
+window.addEventListener('load', ajustarConteudo);

@@ -19,7 +19,11 @@
 
         <!-- MENU LATERAL -->
         <aside class="sidebar">
-            <h2>🎬 Bolão Oscar</h2>
+            <div class="sidebar-header">
+                <h2>🎬 Bolão Oscar</h2>
+                <button id="menuToggle" class="hamburger">☰</button>
+            </div>
+
             <nav>
                 <ul>
                     <li data-page="filmes" class="active">Filmes</li>
@@ -27,17 +31,12 @@
                     <li data-page="grupos">Grupos</li>
                     <li data-page="bolao">Bolão</li>
                 </ul>
+
+                <button data-page="regras" class="menu-btn">Regras</button>
+                <button data-page="ranking" class="menu-btn">🏆 Ranking</button>
+                <button id="processarResultados" class="menu-btn">Processar Resultados Oficiais</button>
+                <button id="logoutBtn" class="menu-btn">Sair</button>
             </nav>
-
-            <button data-page="regras">Regras</button>
-
-            <button data-page="ranking">🏆 Ranking</button>
-
-            <button id="processarResultados">
-                Processar Resultados Oficiais
-            </button>
-
-            <button id="logoutBtn">Sair</button>
         </aside>
 
         <!-- CONTEÚDO -->
