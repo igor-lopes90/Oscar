@@ -109,7 +109,7 @@ function renderizarTabela() {
     "HBO Max": "#6a00ff",
     "Mubi": "#111111",
     "Cinema": "#ff8800",
-    "Stremio": "#ac00c6",
+    "Stremio": "#750087",
     "N/A": "#777777"
   };
 
