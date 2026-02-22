@@ -102,6 +102,7 @@ function renderizarTabela() {
   // 🎨 CORES DAS PLATAFORMAS
   const cores = {
     "Netflix": "#e50914",
+    "YouTube": "#88040b",
     "Prime": "#00a8e1",
     "Disney+": "#113ccf",
     "Apple TV": "#000000",
