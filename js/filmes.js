@@ -17,14 +17,12 @@ auth.onAuthStateChanged(async (user) => {
   const uid = user.uid;
 
   try {
-    // 1️⃣ Filmes
     const filmesSnap = await db.collection("filmes").get();
     filmesArray = filmesSnap.docs.map(doc => ({
       id: doc.id,
       ...doc.data()
     }));
 
-    // 2️⃣ Inicializa userMovies
     const userSnap = await db
       .collection("userMovies")
       .where("uid", "==", uid)
@@ -48,7 +46,6 @@ auth.onAuthStateChanged(async (user) => {
       await batch.commit();
     }
 
-    // 3️⃣ Carrega vistos
     const userSnapAtual = await db
       .collection("userMovies")
       .where("uid", "==", uid)
@@ -69,6 +66,7 @@ auth.onAuthStateChanged(async (user) => {
 /* =========================
    🔹 AUXILIARES
 ========================= */
+
 function contarVistos() {
   return Object.values(filmesUsuario).filter(v => v).length;
 }
@@ -101,9 +99,25 @@ function renderizarTabela() {
     );
   }
 
+  // 🎨 CORES DAS PLATAFORMAS
+  const cores = {
+    "Netflix": "#e50914",
+    "Prime": "#00a8e1",
+    "Disney+": "#113ccf",
+    "Apple TV": "#000000",
+    "HBO Max": "#6a00ff",
+    "Mubi": "#111111",
+    "Cinema": "#ff8800",
+    "Stremio": "#7f3cff",
+    "N/A": "#777777"
+  };
+
   filmesOrdenados.forEach(filme => {
     const movieId = filme.id;
     const visto = filmesUsuario[movieId] || false;
+
+    const plataforma = filme.plataforma || "N/A";
+    const cor = cores[plataforma] || "#999";
 
     tabela.innerHTML += `
       <tr class="${visto ? "visto" : ""}" data-row="${movieId}">
@@ -115,14 +129,21 @@ function renderizarTabela() {
             <option value="true" ${visto ? "selected" : ""}>Sim</option>
           </select>
         </td>
-        <td>${filme.plataformas?.join(", ") || ""}</td>
+        <td style="
+          background:${cor};
+          color:white;
+          font-weight:600;
+          text-align:center;
+          vertical-align:middle;
+        ">
+          ${plataforma}
+        </td>
       </tr>
     `;
   });
 
   atualizarContadores(contarVistos(), filmesOrdenados.length);
 
-  // 🔹 EVENTOS SELECT
   document.querySelectorAll("select[data-id]").forEach(select => {
     select.addEventListener("change", e => {
       const movieId = e.target.dataset.id;
@@ -180,7 +201,6 @@ salvarBtn.addEventListener("click", async () => {
     msg.style.color = "green";
     msg.textContent = "Filmes salvos com sucesso!";
 
-    // 🔄 FORÇA ATUALIZAÇÃO GERAL
     setTimeout(() => {
       location.reload();
     }, 600);
